@@ -1,6 +1,6 @@
 /* General body styles */
 body {
-    background-color: #f8f8f2; /* Softer off-white color */ /* Light beige background */
+    background-color: #f8f8f2; /* Softer off-white color */
     font-family: "Delius", cursive;
     margin: 0;
     padding: 0;
@@ -13,34 +13,39 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: transparent; /* Remove floating effect */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    background-color: transparent; /* Make header transparent to overlay on image */
 }
 
 .header-left h1 {
     font-family: 'Montserrat', sans-serif;
-    color: #000000;
+    color: #ffffff; /* Make text white for better contrast on image */
     margin: 0;
 }
 
 /* Navigation Bar in the top right corner */
 nav {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 70px; /* Adjust spacing to avoid overlap with hamburger menu */
     display: flex;
     gap: 20px;
-    z-index: 100; /* Keep nav on top */
+    z-index: 150; /* Keep nav on top */
 }
 
 nav a {
-    color: #000000; /* Black text */
+    color: #ffffff; /* White text for better contrast on image */
     font-size: 18px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #555555; /* Slightly lighter black for hover */
+    color: #aaaaaa; /* Lighter color for hover effect */
 }
 
 /* Welcome screen styles */
@@ -50,7 +55,7 @@ nav a:hover {
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: #f5f5dc; /* Match website background color */
+    background-color: #f8f8f2; /* Match website background color */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,6 +68,21 @@ nav a:hover {
     font-size: 60px;
     color: #000000; /* Black text */
     animation: fadeInOut 3s ease-in-out forwards;
+}
+
+/* Banner Image Styles */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 100;
 }
 
 /* Animations */
@@ -83,7 +103,7 @@ section {
     width: 80%;
     margin: 150px auto; /* Increased margin to avoid overlap and add more space between sections */
     padding: 50px;
-    background-color: #f8f9fa; /* Slightly off-white for sections */ /* White background for sections */
+    background-color: #f8f9fa; /* Slightly off-white for sections */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow to differentiate sections */
     color: #000000; /* Black text */
@@ -106,9 +126,25 @@ html {
 }
 
 /* Social Media Buttons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
 
-
-
+.social-media a {
+    width: 40px;
+    height: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
 
 .social-media a:hover {
     background-color: #555555;
@@ -118,7 +154,7 @@ html {
 footer {
     margin-top: 100px;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     text-align: center;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -151,7 +187,7 @@ footer a:hover {
 .menu-button div {
     width: 100%;
     height: 4px;
-    background-color: #000000;
+    background-color: #ffffff; /* White color for better contrast on image */
 }
 
 /* Full-screen Menu */
