@@ -1,6 +1,6 @@
 /* General body styles */
 body {
-    background-color: #f1ffc4;
+    background-color: #f8f8f8; /* Offwhite background */
     font-family: "Delius", cursive;
     margin: 0;
     padding: 0;
@@ -18,13 +18,13 @@ nav {
 }
 
 nav a {
-    color: #a7bed3;
+    color: #000000; /* Black text */
     font-size: 18px;
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #c6e2e9;
+    color: #555555; /* Slightly lighter black for hover */
 }
 
 /* Welcome screen styles */
@@ -34,7 +34,7 @@ nav a:hover {
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: #f1ffc4; /* Match website background color */
+    background-color: #f8f8f8; /* Match website background color */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@ nav a:hover {
 .welcome-text {
     font-family: 'Playfair Display', serif;
     font-size: 60px;
-    color: #7755a6;
+    color: #000000; /* Black text */
     animation: fadeInOut 3s ease-in-out forwards;
 }
 
@@ -65,31 +65,17 @@ nav a:hover {
 /* Section styles */
 section {
     width: 80%;
-    margin: 100px auto; /* Add margin to avoid overlap with navigation */
+    margin: 150px auto; /* Increased margin to avoid overlap and add more space between sections */
     padding: 50px;
+    background-color: #ffffff; /* White background for sections */
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Alternating section colors */
-#about {
-    background-color: #c6e2e9;
-    color: #4a4a4a;
-}
-
-#projects {
-    background-color: #ffcaaf;
-    color: #4a4a4a;
-}
-
-#contact {
-    background-color: #dab894;
-    color: #4a4a4a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow to differentiate sections */
+    color: #000000; /* Black text */
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #7755a6;
+    color: #000000; /* Black text */
 }
 
 /* Smooth scroll behavior */
