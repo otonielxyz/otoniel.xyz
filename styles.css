@@ -1,45 +1,54 @@
+/* General reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* General body styles */
 body {
     background-color: #f8f8f2; /* Softer off-white color */
     font-family: "Delius", cursive;
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent unwanted horizontal scrolling */
 }
 
 /* Header styles */
 header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
     z-index: 150;
-    background-color: transparent; /* Make header transparent to overlay on image */
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.header-left {
+    left: 20px;
+    z-index: 200; /* Ensure header text remains on top */
 }
 
 .header-left h1 {
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff; /* Make text white for better contrast on image */
+    color: #ffffff; /* Keep original white color */
+    font-size: 24px;
     margin: 0;
 }
 
 /* Navigation Bar in the top right corner */
 nav {
-    position: absolute;
-    top: 20px;
-    right: 70px; /* Adjust spacing to avoid overlap with hamburger menu */
     display: flex;
-    gap: 20px;
-    z-index: 150; /* Keep nav on top */
+    gap: 15px;
+    align-items: center;
 }
 
 nav a {
     color: #ffffff; /* White text for better contrast on image */
-    font-size: 18px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
@@ -76,13 +85,13 @@ nav a:hover {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: 100;
 }
 
 .banner-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 100;
 }
 
 /* Animations */
@@ -181,13 +190,20 @@ footer a:hover {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 150;
+    z-index: 250;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .menu-button div {
     width: 100%;
     height: 4px;
     background-color: #ffffff; /* White color for better contrast on image */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Change hamburger menu color when scrolling over sections */
+.menu-button.black div {
+    background-color: #000000; /* Change to black when on white background */
 }
 
 /* Full-screen Menu */
@@ -205,6 +221,7 @@ footer a:hover {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s ease;
+    z-index: 300; /* Ensure fullscreen menu is above all other elements */
 }
 
 .fullscreen-menu.show {
@@ -222,4 +239,35 @@ footer a:hover {
 
 .fullscreen-menu a:hover {
     color: #aaaaaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 20px; /* Reduce padding to avoid white bar */
+        background-color: transparent; /* Remove any background color to prevent white bars */
+    }
+
+    .header-left h1 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .menu-button {
+        top: 10px;
+        right: 10px;
+    }
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
 }
