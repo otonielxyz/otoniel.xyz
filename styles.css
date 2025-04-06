@@ -1,0 +1,135 @@
+/* ========== Page Background and Layout ========== */
+
+body {
+  margin: 0; /* Removes default margin around the page */
+  font-family: system-ui, sans-serif; /* Sets the font to something clean and modern */
+  background: 
+    radial-gradient(circle at top right,  #2c0202, #6e121286), /* Creates a dark gradient background */
+    linear-gradient(to right, #258222, #055a13);
+    color: #e9e1d5; /* Default text color — a light beige */
+  display: flex; /* Enables Flexbox layout */
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  min-height: 100vh; /* Makes sure the page takes at least the full screen height */
+}
+
+
+  /* ========== The Main Card (Container for Everything) ========== */
+  
+  .card {
+    background: #3e0a0a38; /* Dark background for the card */
+    padding: 30px; /* Space inside the card (on all sides) */
+    border-radius: 25px; /* Soft, rounded corners */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.253); /* Creates a shadow to lift the card visually */
+    max-width: 500px; /* Limits the width on large screens */
+    width: 90%; /* But allows it to be flexible on small screens */
+  }
+  
+  /* ========== Profile Row (Avatar + Info) ========== */
+  
+  .profile {
+    display: flex; /* Horizontal layout for avatar and info */
+    align-items: center; /* Vertically center the items */
+    margin-bottom: 20px; /* Space below this section */
+  }
+  
+  /* Profile Picture */
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 16px; /* Space between avatar and text */
+    background-color: #503636; /* Placeholder color (in case no image loads) */
+  }
+  
+  /* ========== Info Text (Name, Location, About) ========== */
+  
+  .info h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 1.5em; /* Makes the name a little bigger */
+  }
+  
+  .info p {
+    margin: 4px 0; /* Small spacing around paragraphs */
+    font-size: 0.9em; /* Slightly smaller text */
+    color: #c8b8a5; /* Muted beige color */
+  }
+  
+  /* Section header like \"About\" */
+  h4 {
+    margin: 8px 0 4px;
+    font-size: 1em;
+  }
+  
+  /* ========== Link Buttons ========== */
+  
+  .links {
+    display: grid; /* Stack buttons vertically */
+    grid-template-columns: 1fr; /* Only one column */
+    gap: 10px; /* Space between each button */
+    margin: 20px 0; /* Space above and below the button group */
+  }
+  
+  .button {
+    display: block; /* Makes the entire link area clickable */
+    background: #731d1d50; /* Button background color */
+    color: #f0e8dc; /* Button text color */
+    text-align: center; /* Centers the button text */
+    padding: 12px; /* Padding inside the button */
+    border-radius: 10px; /* Soft rounded corners */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold; /* Bold text */
+    transition: background 0.2s; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for buttons */
+  .button:hover {
+    background: #4d1c1ca8; /* Slightly lighter background on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 1px 25px rgba(255, 255, 255, 0.049)
+  }
+  
+  .button:active {
+    transform: scale(0.97);
+  }
+  /* ========== Email Section ========== */
+  
+  .email {
+    text-align: center; /* Centers all the text */
+    margin-bottom: 20px; /* Space below the email section */
+  }
+  
+  .email p {
+    margin: 4px; /* Small space between lines */
+    font-size: 0.95em; /* Slightly smaller than base size */
+  }
+  
+  /* ========== Stats Section (Visits, Clicks) ========== */
+  
+  .stats {
+    display: flex; /* Layout stats side by side */
+    justify-content: space-around; /* Even spacing between stats */
+    border-top: 1px solid #4e3a2e; /* Subtle top border to separate section */
+    padding-top: 16px; /* Space above the stats */
+  }
+  
+  .stats h2 {
+    margin: 0; /* No margin for the number */
+    font-size: 1.4em; /* Slightly larger number */
+    color: #f5e7d4; /* Light number color */
+  }
+  
+  .stats p {
+    margin: 4px 0 0; /* Slight space above description */
+    font-size: 0.8em; /* Small text */
+    color: #c1b2a3; /* Muted beige */
+  }
+  
+  /* ========== Responsive Design ========== */
+  
+  @media (max-width: 480px) {
+    .card {
+      padding: 20px; /* Reduce padding on smaller screens */
+    }
+  }
+  
