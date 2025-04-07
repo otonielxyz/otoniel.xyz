@@ -23,6 +23,7 @@ body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.253); /* Creates a shadow to lift the card visually */
     max-width: 500px; /* Limits the width on large screens */
     width: 90%; /* But allows it to be flexible on small screens */
+    padding: 30px;
   }
   
   /* ========== Profile Row (Avatar + Info) ========== */
